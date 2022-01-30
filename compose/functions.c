@@ -1556,6 +1556,15 @@ static int op_attachment_new_mime_after(struct ComposeSharedData *shared, int op
                           menu_get_index(shared->adata->menu), true);
 }
 
+/*
+ * op_attachment_new_mime_before - Compose new attachment using mailcap entry - Implements ::compose_function_t - @ingroup compose_function_api
+ */
+static int op_attachment_new_mime_before(struct ComposeSharedData *shared, int op)
+{
+  return compose_new_mime(shared, _("New file to insert before: "),
+                          menu_get_index(shared->adata->menu), false);
+}
+
 /**
  * op_attachment_print - Print the current entry - Implements ::compose_function_t - @ingroup compose_function_api
  */
@@ -2114,6 +2123,7 @@ struct ComposeFunction ComposeFunctions[] = {
   { OP_ATTACHMENT_MOVE_UP,                op_attachment_move_up },
   { OP_ATTACHMENT_NEW_MIME,               op_attachment_new_mime },
   { OP_ATTACHMENT_NEW_MIME_AFTER,         op_attachment_new_mime_after },
+  { OP_ATTACHMENT_NEW_MIME_BEFORE,        op_attachment_new_mime_before },
   { OP_PIPE,                              op_attachment_filter },
   { OP_ATTACHMENT_PRINT,                  op_attachment_print },
   { OP_ATTACHMENT_RENAME_ATTACHMENT,      op_attachment_rename_attachment },
