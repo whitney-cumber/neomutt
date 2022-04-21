@@ -372,8 +372,8 @@ void mutt_sort_headers(struct Mailbox *m, struct ThreadsContext *threads,
     return; /* nothing to do! */
   }
 
-  if (m->verbose)
-    mutt_message(_("Sorting mailbox..."));
+  // if (m->verbose)
+  //   mutt_message(_("Sorting mailbox..."));
 
   const bool c_score = cs_subset_bool(NeoMutt->sub, "score");
   if (OptNeedRescore && c_score)

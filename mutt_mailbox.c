@@ -231,7 +231,8 @@ bool mutt_mailbox_notify(struct Mailbox *m_cur)
 {
   if ((mutt_mailbox_check(m_cur, MUTT_MAILBOX_CHECK_NO_FLAGS) > 0) && MailboxNotify)
   {
-    return mutt_mailbox_list();
+    return true;
+    // return mutt_mailbox_list();
   }
   return false;
 }

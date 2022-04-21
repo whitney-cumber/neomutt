@@ -440,7 +440,7 @@ int mutt_pager(struct PagerView *pview)
 
             if (e && !e->read)
             {
-              mutt_message(_("New mail in this mailbox"));
+              // mutt_message(_("New mail in this mailbox"));
               do_new_mail = true;
               break;
             }

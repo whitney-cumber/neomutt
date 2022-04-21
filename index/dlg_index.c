@@ -1129,7 +1129,7 @@ struct Mailbox *mutt_index_menu(struct MuttWindow *dlg, struct Mailbox *m_init)
             const struct Email *e = shared->mailbox->emails[i];
             if (e && !e->read && !e->old)
             {
-              mutt_message(_("New mail in this mailbox"));
+              // mutt_message(_("New mail in this mailbox"));
               const bool c_beep_new = cs_subset_bool(shared->sub, "beep_new");
               if (c_beep_new)
                 mutt_beep(true);

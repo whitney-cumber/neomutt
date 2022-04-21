@@ -1140,7 +1140,7 @@ static int read_headers_fetch_new(struct Mailbox *m, unsigned int msn_begin,
 
   if (m->verbose)
   {
-    progress = progress_new(_("Fetching message headers..."), MUTT_PROGRESS_READ, msn_end);
+    // progress = progress_new(_("Fetching message headers..."), MUTT_PROGRESS_READ, msn_end);
   }
 
   buf = mutt_buffer_pool_get();
