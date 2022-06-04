@@ -407,6 +407,9 @@ static struct ConfigDef MainVars[] = {
   { "new_mail_command", DT_STRING|DT_COMMAND, 0, 0, NULL,
     "External command to run when new mail arrives"
   },
+  { "devel_new_mail_command", DT_STRING|DT_COMMAND, 0, 0, NULL,
+    "External command to run when new mail arrives (in development, clashes with new_mail_command)"
+  },
   { "pager", DT_STRING|DT_COMMAND, IP "builtin", 0, NULL,
     "External command for viewing messages, or 'builtin' to use NeoMutt's"
   },

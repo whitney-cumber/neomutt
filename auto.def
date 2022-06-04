@@ -130,6 +130,7 @@ options {
   debug-parse-test=0        => "DEBUG: Enable 'neomutt -T' for config testing"
   debug-queue=0             => "DEBUG: Enable TAILQ debugging"
   debug-window=0            => "DEBUG: Enable windows dump"
+  devel-new-mail=0          => "Enable new work-in-progress system notifications"
 # Deprecated stuff
   with-ui:=deprecated       => "Deprecated"
   with-slang:deprecated     => "Deprecated"
@@ -153,11 +154,11 @@ if {1} {
   # Keep sorted, please.
   foreach opt {
     asan autocrypt bdb coverage debug-backtrace debug-color debug-email
-    debug-graphviz debug-notify debug-parse-test debug-queue debug-window doc
-    everything fmemopen full-doc fuzzing gdbm gnutls gpgme gss homespool idn
-    idn2 include-path-in-cflags inotify kyotocabinet lmdb locales-fix lua lz4
-    mixmaster nls notmuch pcre2 pgp pkgconf qdbm rocksdb sasl smime sqlite ssl
-    testing tdb tokyocabinet zlib zstd
+    debug-graphviz debug-notify debug-parse-test debug-queue debug-window
+    devel-new-mail doc everything fmemopen full-doc fuzzing gdbm gnutls gpgme
+    gss homespool idn idn2 include-path-in-cflags inotify kyotocabinet lmdb
+    locales-fix lua lz4 mixmaster nls notmuch pcre2 pgp pkgconf qdbm rocksdb
+    sasl smime sqlite ssl testing tdb tokyocabinet zlib zstd
   } {
     define want-$opt [opt-bool $opt]
   }
@@ -1242,6 +1243,11 @@ if {[get-define want-debug-queue]} {
 # Windows dump
 if {[get-define want-debug-window]} {
   define USE_DEBUG_WINDOW 1
+}
+
+# WIP notifications implementation
+if {[get-define want-devel-new-mail]} {
+  define DEVEL_NEW_MAIL 1
 }
 
 ###############################################################################
