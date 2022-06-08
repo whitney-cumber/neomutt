@@ -26,8 +26,8 @@
 #define TEST_NO_MAIN
 #include "config.h"
 #include "acutest.h"
-#include "newmail/lib.h"
 #include "core/lib.h"
+#include "newmail/lib.h"
 
 static char *message = NULL;
 
