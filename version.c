@@ -303,6 +303,9 @@ static struct CompileOptions debug_opts[] = {
 #ifdef USE_DEBUG_GRAPHVIZ
   { "graphviz", 2 },
 #endif
+#ifdef DEVEL_NEW_MAIL
+  { "new_mail", 2 },
+#endif
 #ifdef USE_DEBUG_NOTIFY
   { "notify", 2 },
 #endif
