@@ -986,6 +986,7 @@
 ** or when you save it to another folder.
 */
 
+#ifdef USE_DEVEL_NEW_MAIL
 { "devel_new_mail_command", DT_COMMAND, 0 },
 /*
 ** .pp
@@ -996,6 +997,7 @@
 ** .dt %f  .dd Mailbox folder path
 ** .de
 */
+#endif
 
 { "digest_collapse", DT_BOOL, true },
 /*
